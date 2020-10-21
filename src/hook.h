@@ -68,10 +68,12 @@ typedef bool (*HookHandlerFn)(HookType_t, CHook*);
 // ============================================================================
 // >> CLASSES
 // ============================================================================
-namespace AsmJit {
-	struct Assembler;
+namespace asmjit {
+	namespace x86 {
+		struct Assembler;
+	}
 }
-using namespace AsmJit;
+using namespace asmjit::x86;
 
 class CHook
 {
