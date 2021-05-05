@@ -4,6 +4,7 @@
 CMake_Minimum_Required(VERSION 2.8)
 Project(DynamicHooks)
 
+SET(ASMJIT_BUILD_STATIC 1)
 
 # =============================================================================
 # >> SOURCE & HEADER FILES
@@ -70,18 +71,17 @@ Set(CMAKE_CXX_FLAGS "-m32")
 # Create a static library
 Add_Library(DynamicHooks STATIC ${DYNAMICHOOKS_FILES})
 
-
 # =============================================================================
 # >> INCLUDES
 # =============================================================================
-Include_Directories(thirdparty/AsmJit/include)
+target_include_directories(
+  "${PROJECT_NAME}" PUBLIC
+  ../../asmjit/src/asmjit
+ )
 
+#add_subdirectory(../../asmjit build)
 
 # =============================================================================
 # >> LINK LIBRARIES
 # =============================================================================
-If(WIN32)
-    Target_Link_Libraries(DynamicHooks ../../thirdparty/AsmJit/lib/AsmJit)
-Else()
-    Target_Link_Libraries(DynamicHooks ${CMAKE_SOURCE_DIR}/thirdparty/AsmJit/lib/libAsmJit.a)
-Endif()
+target_link_libraries(DynamicHooks asmjit)

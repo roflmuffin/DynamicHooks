@@ -32,6 +32,9 @@
 // >> INCLUDES
 // ============================================================================
 #include "hook.h"
+
+#include <unordered_map>
+
 #include "utilities.h"
 #include "asm.h"
 
@@ -150,7 +153,8 @@ bool CHook::IsCallbackRegistered(HookType_t eHookType, HookHandlerFn* pCallback)
 bool CHook::HookHandler(HookType_t eHookType)
 {
 	bool bOverride = false;
-	std::list<HookHandlerFn *> callbacks = this->m_hookHandler[eHookType];
+	std::list<HookHandlerFn *> callbacks = this->m_hookHandler[eHookType];	
+
 	for(std::list<HookHandlerFn *>::iterator it=callbacks.begin(); it != callbacks.end(); it++)
 	{
 		bool result = ((HookHandlerFn) *it)(eHookType, this);
@@ -212,7 +216,7 @@ void* CHook::CreateBridge()
 	VoidFunc dst;
 	auto err = rt.add(&dst, &code);	
 
-	return dst;
+	return (void*) dst;
 }
 
 void CHook::Write_ModifyReturnAddress(x86::Assembler& a)
@@ -301,7 +305,7 @@ void* CHook::CreatePostCallback()
 	VoidFunc dst;
 	auto err = rt.add(&dst, &code);	
 
-	return dst;
+	return (void*) dst;
 }
 
 void CHook::Write_CallHandler(Assembler& a, HookType_t type)

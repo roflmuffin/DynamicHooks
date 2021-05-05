@@ -72,6 +72,7 @@ bool PreMyFunc(HookType_t eHookType, CHook* pHook)
 
 	MyClass* pMyClass = pHook->GetArgument<MyClass *>(0);
 	assert(pMyClass == g_pMyClass);
+        printf("%p\n", pMyClass);
 
 	int x = pHook->GetArgument<int>(1);
 	assert(x >= 0 && x <= 3);
@@ -81,6 +82,11 @@ bool PreMyFunc(HookType_t eHookType, CHook* pHook)
 bool PostMyFunc(HookType_t eHookType, CHook* pHook)
 {
 	g_iPostMyFuncCallCount++;
+
+        MyClass* pMyClass = pHook->GetArgument<MyClass*>(0);
+        assert(pMyClass == g_pMyClass);
+        printf("%p\n", pMyClass);
+
 	int return_value = pHook->GetReturnValue<int>();
 	assert(return_value == 3);
 	return false;

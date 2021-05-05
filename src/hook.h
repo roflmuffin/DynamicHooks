@@ -36,6 +36,8 @@
 // ============================================================================
 #include <list>
 #include <map>
+#include <unordered_map>
+
 
 #include "registers.h"
 #include "convention.h"
@@ -117,10 +119,15 @@ public:
 	*/
 	bool IsCallbackRegistered(HookType_t type, HookHandlerFn* pFunc);
 
+        void* GetArgumentAddress(int iIndex)
+        {
+          return m_pCallingConvention->GetArgumentPtr(iIndex, m_pRegisters);
+        }
+
 	template<class T>
 	T GetArgument(int iIndex)
 	{
-		return *(T *) m_pCallingConvention->GetArgumentPtr(iIndex, m_pRegisters);
+	  return *(T*)m_pCallingConvention->GetArgumentPtr(iIndex, m_pRegisters);
 	}
 
 	template<class T>
@@ -160,6 +167,7 @@ private:
 	void* __cdecl GetReturnAddress(void* pESP);
 	void __cdecl SetReturnAddress(void* pRetAddr, void* pESP);
 
+        std::unordered_map<void*, void*> m_ecx_addresses;
 public:
 	std::map<HookType_t, std::list<HookHandlerFn*> > m_hookHandler;
 

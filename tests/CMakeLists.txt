@@ -4,24 +4,36 @@
 CMake_Minimum_Required(VERSION 2.8)
 Project(Tests)
 
+SET(ASMJIT_STATIC 1)
 
 # =============================================================================
 # >> MACROS
 # =============================================================================
 # Create a new macro to easily add test executables
 macro (create_dynamic_hooks_test name)
+
     add_executable(${ARGV})
     if (TARGET ${name})
         If(WIN32)
-            Target_Link_Libraries(${name} "../vs2010-x86/$(Configuration)/DynamicHooks")
-            Target_Link_Libraries(${name} ../../src/thirdparty/AsmJit/lib/AsmJit)
-        Else()
-            Target_Link_Libraries(${name} $ENV{PWD}/../unix-x86/libDynamicHooks.a)
-            Target_Link_Libraries(${name} $ENV{PWD}/../../src/thirdparty/AsmJit/lib/libAsmJit.a)
+            #Target_Link_Libraries(${name} "../vs2010-x86/$(Configuration)/DynamicHooks")
+            #Target_Link_Libraries(${name} ../../src/thirdparty/AsmJit/lib/AsmJit)
+            target_link_libraries(${name} DynamicHooks asmjit)
+
+            target_include_directories(
+  "${name}" PUBLIC
+  ../../asmjit/src/asmjit
+  ../src
+  )
         Endif()
     endif()
 endmacro()
 
+
+#add_subdirectory(../../asmjit build)
+
+# =============================================================================
+# >> LINK LIBRARIES
+# =============================================================================
 
 # =============================================================================
 # >> COMPILER FLAGS
@@ -37,9 +49,12 @@ Set(CMAKE_CXX_FLAGS "-m32")
 # =============================================================================
 # >> INCLUDES
 # =============================================================================
-Include_Directories(../src)
-Include_Directories(../src/thirdparty/AsmJit/include)
+#
+#
 
+
+add_subdirectory(../src dynanmichooks_build)
+add_subdirectory(../../asmjit asmjit_build)
 
 # =============================================================================
 # >> TESTS
@@ -58,4 +73,6 @@ Else()
     create_dynamic_hooks_test(test_gcc_cdecl2 gcc_cdecl2.cpp)
     create_dynamic_hooks_test(test_gcc_thiscall1 gcc_thiscall1.cpp)
     create_dynamic_hooks_test(test_gcc_thiscall2 gcc_thiscall2.cpp)
-Endif()
+  Endif()
+
+  target_link_libraries(DynamicHooks)

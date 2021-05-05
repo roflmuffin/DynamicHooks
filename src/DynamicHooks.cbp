@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="DynamicHooks"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\libraries\;CMake Files\libraries\DynamicHooks\;CMake Files\libraries\DynamicHooks\src\;CMake Files\libraries\hl2sdk-csgo\;CMake Files\libraries\spdlog\;CMake Files\libraries\spdlog\cmake\;CMake Files\libraries\dyncall\;CMake Files\libraries\dyncall\dynload\;CMake Files\libraries\asmjit\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/michael/projects/cmake_test/libraries/DynamicHooks/src"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/michael/projects/cmake_test/libraries/DynamicHooks/src/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/michael/projects/cmake_test/libraries/DynamicHooks/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/michael/projects/cmake_test/libraries/DynamicHooks/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/michael/projects/cmake_test/libraries/DynamicHooks/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="DynamicHooks">
+				<Option output="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/libDynamicHooks.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/michael/projects/cmake_test/libraries/DynamicHooks/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/../../asmjit/src/asmjit"/>
+					<Add directory="/home/michael/projects/cmake_test/libraries/asmjit/src"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/michael/projects/cmake_test/libraries/DynamicHooks/src/Makefile&quot;  VERBOSE=1 DynamicHooks"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/michael/projects/cmake_test/libraries/DynamicHooks/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/michael/projects/cmake_test/libraries/DynamicHooks/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/michael/projects/cmake_test/libraries/DynamicHooks/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="DynamicHooks/fast">
+				<Option output="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/libDynamicHooks.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/michael/projects/cmake_test/libraries/DynamicHooks/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/../../asmjit/src/asmjit"/>
+					<Add directory="/home/michael/projects/cmake_test/libraries/asmjit/src"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/michael/projects/cmake_test/libraries/DynamicHooks/src/Makefile&quot;  VERBOSE=1 DynamicHooks/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/michael/projects/cmake_test/libraries/DynamicHooks/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/michael/projects/cmake_test/libraries/DynamicHooks/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/michael/projects/cmake_test/libraries/DynamicHooks/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/asm.cpp">
+			<Option target="DynamicHooks"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/asm.h">
+			<Option target="DynamicHooks"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/convention.h">
+			<Option target="DynamicHooks"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/conventions/x86GccCdecl.h">
+			<Option target="DynamicHooks"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/conventions/x86GccThiscall.h">
+			<Option target="DynamicHooks"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/conventions/x86MsCdecl.cpp">
+			<Option target="DynamicHooks"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/conventions/x86MsCdecl.h">
+			<Option target="DynamicHooks"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/conventions/x86MsFastcall.cpp">
+			<Option target="DynamicHooks"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/conventions/x86MsFastcall.h">
+			<Option target="DynamicHooks"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/conventions/x86MsStdcall.cpp">
+			<Option target="DynamicHooks"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/conventions/x86MsStdcall.h">
+			<Option target="DynamicHooks"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/conventions/x86MsThiscall.cpp">
+			<Option target="DynamicHooks"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/conventions/x86MsThiscall.h">
+			<Option target="DynamicHooks"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/hook.cpp">
+			<Option target="DynamicHooks"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/hook.h">
+			<Option target="DynamicHooks"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/manager.cpp">
+			<Option target="DynamicHooks"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/manager.h">
+			<Option target="DynamicHooks"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/registers.cpp">
+			<Option target="DynamicHooks"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/registers.h">
+			<Option target="DynamicHooks"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/utilities.cpp">
+			<Option target="DynamicHooks"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/utilities.h">
+			<Option target="DynamicHooks"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/DynamicHooks/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libraries\DynamicHooks\src\"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/hl2sdk-csgo/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libraries\hl2sdk-csgo\"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/spdlog/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libraries\spdlog\"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/spdlog/cmake/ide.cmake">
+			<Option virtualFolder="CMake Files\libraries\spdlog\cmake\"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/spdlog/cmake/utils.cmake">
+			<Option virtualFolder="CMake Files\libraries\spdlog\cmake\"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/dyncall/dynload/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libraries\dyncall\dynload\"/>
+		</Unit>
+		<Unit filename="/home/michael/projects/cmake_test/libraries/asmjit/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libraries\asmjit\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
